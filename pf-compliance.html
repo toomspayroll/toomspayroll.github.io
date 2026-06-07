@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PF Registration & Monthly Compliance Services - Tooms Payroll</title>
+  <meta name="description" content="End-to-end Provident Fund setup, monthly ECR filing, and penalty resolution. Learn who needs it, consequences of non-compliance, and required documents.">
+  <link rel="canonical" href="https://toomspayroll.com/pf-compliance.html">
+  
+  <!-- JSON-LD SEO Structured Data Schemas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://toomspayroll.com/pf-compliance.html#service",
+    "name": "PF Registration & Monthly Compliance",
+    "serviceType": "Provident Fund Statutory Compliance",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Tooms Payroll",
+      "url": "https://toomspayroll.com/",
+      "logo": "https://toomspayroll.com/assets/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": "IN",
+    "description": "End-to-end setup, monthly ECR return filing, penalty resolution, and grievance management under the Employees' Provident Funds Act.",
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "INR",
+      "price": "0.00",
+      "description": "Free initial compliance audit and review"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://toomspayroll.com/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "PF Compliance",
+        "item": "https://toomspayroll.com/pf-compliance.html"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ----------------------------------------------------
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ---------------------------------------------------- */
+    :root {
+      --color-dark: #0f172a;
+      --color-dark-muted: #1e293b;
+      --color-dark-tint: #334155;
+      --color-primary: #2563eb;
+      --color-primary-light: #3b82f6;
+      --color-primary-dark: #1d4ed8;
+      --color-accent: #0ea5e9;
+      --color-bg-light: #f8fafc;
+      --color-white: #ffffff;
+      --color-border: #e2e8f0;
+      --color-success: #10b981;
+      --color-success-bg: #ecfdf5;
+      --color-danger: #ef4444;
+      --color-danger-bg: #fef2f2;
+      
+      --font-headings: 'Outfit', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      
+      --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* ----------------------------------------------------
+       2. BASE RESET & STYLES
+       ---------------------------------------------------- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-dark-tint);
+      background-color: var(--color-bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-headings);
+      color: var(--color-dark);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    /* Accessibility focus styling */
+    *:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    /* ----------------------------------------------------
+       3. NAVIGATION HEADER
+       ---------------------------------------------------- */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-headings);
+      font-weight: 800;
+      font-size: 1.35rem;
+      color: var(--color-dark);
+    }
+
+    .logo-icon {
+      background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-white);
+      font-weight: 800;
+      font-size: 1.2rem;
+    }
+
+    .nav-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      color: var(--color-primary);
+      font-size: 0.95rem;
+      transition: all var(--transition-fast);
+    }
+
+    .nav-back-link:hover {
+      color: var(--color-primary-dark);
+      transform: translateX(-2px);
+    }
+
+    /* ----------------------------------------------------
+       4. DETAIL HERO SECTION
+       ---------------------------------------------------- */
+    .detail-hero {
+      background-color: var(--color-dark);
+      background-image: radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 60%);
+      color: var(--color-white);
+      padding: 60px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .detail-hero-content {
+      max-width: 800px;
+    }
+
+    .detail-hero-badge {
+      display: inline-block;
+      background-color: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      color: var(--color-accent);
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+
+    .detail-hero-title {
+      font-size: 2.75rem;
+      color: var(--color-white);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    .detail-hero-desc {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 700px;
+    }
+
+    @media (max-width: 768px) {
+      .detail-hero-title {
+        font-size: 2rem;
+      }
+      .detail-hero-desc {
+        font-size: 1.05rem;
+      }
+    }
+
+    /* ----------------------------------------------------
+       5. CONTENT SPLIT LAYOUT
+       ---------------------------------------------------- */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 50px;
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+
+    @media (max-width: 992px) {
+      .layout-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding-top: 40px;
+      }
+    }
+
+    .content-area {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .info-section {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 480px) {
+      .info-section {
+        padding: 24px;
+      }
+    }
+
+    .info-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--color-bg-light);
+      padding-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .info-section p {
+      margin-bottom: 16px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Icon setups */
+    .section-icon {
+      color: var(--color-primary);
+      flex-shrink: 0;
+    }
+
+    /* Callout warning card */
+    .warning-card {
+      background-color: var(--color-danger-bg);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-left: 4px solid var(--color-danger);
+    }
+
+    .warning-card h2 {
+      color: #991b1b;
+      border-bottom-color: rgba(239, 68, 68, 0.1);
+    }
+
+    /* Checklist Styles */
+    .doc-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .doc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.98rem;
+    }
+
+    .doc-icon {
+      color: var(--color-success);
+      margin-top: 4px;
+      flex-shrink: 0;
+    }
+
+    /* Back Home Button style */
+    .back-home-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background-color: var(--color-white);
+      border: 1.5px solid var(--color-border);
+      color: var(--color-dark);
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      align-self: flex-start;
+    }
+
+    .back-home-btn:hover {
+      background-color: var(--color-bg-light);
+      border-color: var(--color-dark-tint);
+    }
+
+    /* ----------------------------------------------------
+       6. INTAKE FORM (Sidebar placement)
+       ---------------------------------------------------- */
+    .sidebar-area {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+    }
+
+    @media (max-width: 992px) {
+      .sidebar-area {
+        position: static;
+      }
+    }
+
+    .form-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-header {
+      margin-bottom: 28px;
+    }
+
+    .form-title {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+    }
+
+    .form-desc {
+      font-size: 0.88rem;
+      color: var(--color-dark-tint);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-dark);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-input-wrapper {
+      position: relative;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 48px;
+      background-color: var(--color-bg-light);
+      border: 1.5px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      padding: 0 16px 0 42px;
+      font-size: 0.95rem;
+      color: var(--color-dark);
+      transition: all var(--transition-fast);
+    }
+
+    .form-input:focus {
+      background-color: var(--color-white);
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+      outline: none;
+    }
+
+    .form-input-icon {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .form-input:focus ~ .form-input-icon {
+      color: var(--color-primary);
+    }
+
+    .form-select {
+      appearance: none;
+      -webkit-appearance: none;
+      cursor: pointer;
+      padding-right: 42px;
+    }
+
+    .form-select-arrow {
+      position: absolute;
+      top: 50%;
+      right: 14px;
+      transform: translateY(-50%);
+      color: #94a3b8;
+      pointer-events: none;
+      width: 18px;
+      height: 18px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      height: 50px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all var(--transition-normal);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    .spinner {
+      display: none;
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--color-white);
+      animation: spin 0.8s linear infinite;
+    }
+
+    /* ----------------------------------------------------
+       7. SUCCESS MODAL OVERLAY
+       ---------------------------------------------------- */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-normal);
+      padding: 24px;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background-color: var(--color-white);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+      border: 1px solid var(--color-border);
+      transform: scale(0.9) translateY(20px);
+      transition: transform var(--transition-normal);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-success-icon {
+      width: 72px;
+      height: 72px;
+      background-color: var(--color-success-bg);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-success);
+      margin: 0 auto 20px;
+    }
+
+    .modal-success-icon svg {
+      width: 36px;
+      height: 36px;
+      stroke-dasharray: 80;
+      stroke-dashoffset: 80;
+      animation: drawCheck 0.6s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .modal-title {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    .modal-msg {
+      font-size: 0.95rem;
+      color: var(--color-dark-tint);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .btn-modal-close {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      width: 100%;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-modal-close:hover {
+      background-color: var(--color-primary);
+    }
+
+    /* ----------------------------------------------------
+       8. FOOTER
+       ---------------------------------------------------- */
+    .footer {
+      background-color: var(--color-dark);
+      color: #94a3b8;
+      padding: 40px 0;
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .footer-wrapper {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+    }
+
+    /* Primary Call to Action in main column */
+    .cta-block {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.05) 0%, rgba(14, 165, 233, 0.05) 100%);
+      border: 1.5px dashed rgba(37, 99, 235, 0.3);
+      padding: 32px;
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+    }
+
+    .cta-block-title {
+      font-size: 1.25rem;
+      color: var(--color-dark);
+      font-weight: 700;
+    }
+
+    .cta-block-desc {
+      font-size: 0.95rem;
+      color: var(--color-dark-tint);
+    }
+
+    .btn-cta-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+      color: var(--color-white);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: all var(--transition-normal);
+    }
+
+    .btn-cta-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Animations */
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes drawCheck {
+      to { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">T</div>
+          <span>Tooms Payroll</span>
+        </a>
+        <a href="index.html" class="nav-back-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Back to Services
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Header Banner -->
+  <section class="detail-hero">
+    <div class="container">
+      <div class="detail-hero-content">
+        <span class="detail-hero-badge">Statutory Framework</span>
+        <h1 class="detail-hero-title">PF Registration & Monthly Compliance</h1>
+        <p class="detail-hero-desc">
+          Complete statutory setup, ECR return filings, grievance resolution, and regular updates to maintain flawless EPF records for your workforce.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Layout Area -->
+  <div class="container">
+    <div class="layout-grid">
+      
+      <!-- Left Hand Side: Content Details -->
+      <main class="content-area">
+        
+        <!-- Who Needs Section -->
+        <section class="info-section">
+          <h2>
+            <svg class="section-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+            Who Needs This Service?
+          </h2>
+          <p>Under the Employees' Provident Funds and Miscellaneous Provisions Act, 1952, registration is mandatory for:</p>
+          <ul class="doc-list" style="margin-top: 10px;">
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Any factory or business establishment employing <strong>20 or more persons</strong> (including temporary, contract, and casual workers).</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Startups and SMEs wishing to enroll <strong>voluntarily</strong> to provide social security benefits to employees and build organizational credibility.</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Firms bidding for government tenders, public sector contracts, or large enterprise vendor panels where statutory PF compliance records are prerequisite.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Consequences / Risks Section -->
+        <section class="info-section warning-card">
+          <h2>
+            <svg class="section-icon" style="color: var(--color-danger);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Consequences of Non-Compliance
+          </h2>
+          <p>Failing to register, deducting contributions but not depositing them, or filing late returns triggers heavy regulatory actions:</p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <svg class="doc-icon" style="color: var(--color-danger);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>Interest under Section 7Q:</strong> Mandatory interest charge of 12% per annum on the amount due for every day of delay.</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" style="color: var(--color-danger);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>Damages under Section 14B:</strong> Punitive damages ranging from 5% to 25% per annum depending on the cumulative duration of delay.</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" style="color: var(--color-danger);" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <span><strong>Criminal Liability:</strong> Prosecution, property attachment of directors, and imprisonment up to 3 years for non-remittance of deducted wages.</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Required Documents Checklist -->
+        <section class="info-section">
+          <h2>
+            <svg class="section-icon" style="color: var(--color-success);" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            Required Documentation Checklists
+          </h2>
+          <p>Keep these documents ready to set up your EPF corporate account without delays:</p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Certificate of Incorporation / Partnership Deed / Shop & Establishment License</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>PAN Card of the firm or business entity</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>PAN and Aadhaar card of the authorized Director/Partner (with mobile linkage)</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Copy of cancelled cheque & company bank statement showing operational records</span>
+            </li>
+            <li class="doc-item">
+              <svg class="doc-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <span>Employee records (Salary structure, Aadhaar details, Bank account, Date of joining)</span>
+            </li>
+          </ul>
+        </section>
+
+        <!-- Call to Action Section in Column -->
+        <section class="cta-block" id="body-cta-section">
+          <div class="cta-block-title">Ensure Flawless PF Compliance for Your Workforce</div>
+          <div class="cta-block-desc">Avoid costly interest penalties under Section 7Q and punitive damages under Section 14B. Claim your free statutory compliance review today.</div>
+          <button class="btn-cta-action" id="body-cta-btn">
+            Initiate Free PF Audit
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </section>
+
+        <!-- Back to Home -->
+        <a href="index.html" class="back-home-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          Return to Homepage
+        </a>
+
+      </main>
+
+      <!-- Right Hand Side: Lead capture sidebar -->
+      <aside class="sidebar-area">
+        <div class="form-card">
+          <div class="form-header">
+            <h3 class="form-title">Secure Free Audit</h3>
+            <p class="form-desc">Get an expert review of your PF registrations and payroll compliance risk exposure.</p>
+          </div>
+          <form id="compliance-intake-form">
+            <!-- Full Name -->
+            <div class="form-group">
+              <label for="full-name" class="form-label">Full Name</label>
+              <div class="form-input-wrapper">
+                <input type="text" id="full-name" name="fullName" class="form-input" placeholder="John Doe" required>
+                <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+              </div>
+            </div>
+
+            <!-- Company Name -->
+            <div class="form-group">
+              <label for="company-name" class="form-label">Company Name</label>
+              <div class="form-input-wrapper">
+                <input type="text" id="company-name" name="companyName" class="form-input" placeholder="Enterprise Solutions Ltd." required>
+                <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+              </div>
+            </div>
+
+            <!-- WhatsApp Number -->
+            <div class="form-group">
+              <label for="whatsapp-number" class="form-label">Contact Number (WhatsApp)</label>
+              <div class="form-input-wrapper">
+                <input type="tel" id="whatsapp-number" name="whatsappNumber" class="form-input" placeholder="+1 (555) 000-0000" required>
+                <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+            </div>
+
+            <!-- Preselected Dropdown -->
+            <div class="form-group">
+              <label for="compliance-service" class="form-label">Required Compliance Service</label>
+              <div class="form-input-wrapper">
+                <select id="compliance-service" name="complianceService" class="form-input form-select" required>
+                  <option value="PF Registration & Monthly Compliance" selected>PF Registration & Monthly Compliance</option>
+                  <option value="ESI Registration & Compliance">ESI Registration & Compliance</option>
+                  <option value="Factory License Consultancy">Factory License Consultancy</option>
+                  <option value="PoSH Compliance Framework">PoSH Compliance Framework</option>
+                  <option value="Digital Signature Certificates (DSC)">Digital Signature Certificates (DSC)</option>
+                  <option value="Pollution NOC (CTE & CTO)">Pollution NOC (CTE & CTO)</option>
+                  <option value="BoCW Registration & Cess Compliance">BoCW Registration & Cess Compliance</option>
+                  <option value="Payroll Processing & HR Compliance">Payroll Processing & HR Compliance</option>
+                </select>
+                <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                <svg class="form-select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submit-btn">
+              <span id="submit-text">Secure My Free Consultation</span>
+              <span class="spinner" id="submit-spinner"></span>
+            </button>
+          </form>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Success Modal dialog -->
+  <div class="modal-overlay" id="success-modal">
+    <div class="modal-card">
+      <div class="modal-success-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <h3 class="modal-title">Request Secured</h3>
+      <p class="modal-msg">
+        Thank you! Your inquiry has been secured. A corporate compliance consultant will contact you via phone or WhatsApp within 2 hours.
+      </p>
+      <button class="btn-modal-close" id="modal-close-btn">Dismiss Window</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-wrapper">
+        <div>&copy; 2026 Tooms Payroll & Corporate Compliance. All rights reserved.</div>
+        <ul style="display: flex; gap: 20px; list-style: none;">
+          <li><a href="index.html" style="color: #94a3b8; font-size: 0.88rem;">Home</a></li>
+          <li><a href="index.html#services" style="color: #94a3b8; font-size: 0.88rem;">Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('compliance-intake-form');
+      const submitBtn = document.getElementById('submit-btn');
+      const submitText = document.getElementById('submit-text');
+      const spinner = document.getElementById('submit-spinner');
+      
+      const modal = document.getElementById('success-modal');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+
+      // Scroll to sidebar form
+      const bodyCtaBtn = document.getElementById('body-cta-btn');
+      bodyCtaBtn.addEventListener('click', () => {
+        const targetElement = document.getElementById('full-name');
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => targetElement.focus(), 800);
+      });
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitText.style.display = 'none';
+        spinner.style.display = 'block';
+
+        const formData = new FormData(form);
+        const dataPayload = {
+          fullName: formData.get('fullName'),
+          companyName: formData.get('companyName'),
+          whatsappNumber: formData.get('whatsappNumber'),
+          complianceService: formData.get('complianceService'),
+          submittedAt: new Date().toISOString()
+        };
+
+        const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbz02uN8Twgf6Uw4Zc-cl_-fSPJvllCV00zbWGQthY8ikwggvOnoVBVWZRcYOjgDf4bp7A/exec';
+
+        try {
+          await fetch(appsScriptUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataPayload)
+          });
+        } catch (error) {
+          console.warn('Network transmission skipped or redirected:', error);
+        } finally {
+          form.reset();
+          submitBtn.disabled = false;
+          submitText.style.display = 'inline';
+          spinner.style.display = 'none';
+          modal.classList.add('active');
+        }
+      });
+
+      modalCloseBtn.addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
