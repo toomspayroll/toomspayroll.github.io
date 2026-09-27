@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Admin — Tooms Payroll</title>
+  <meta name="description" content="Admin page for publishing new compliance blog posts to Tooms Payroll website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --muted: #475569;
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --radius: 18px;
+      --shadow: 0 24px 80px rgba(15, 23, 42, 0.08);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    .page {
+      width: min(1200px, calc(100% - 32px));
+      margin: 40px auto;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px;
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+    p.lead {
+      color: var(--muted);
+      margin-bottom: 24px;
+      max-width: 720px;
+    }
+    .field {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      font-size: 1rem;
+      color: var(--text);
+      background: #fff;
+    }
+    textarea {
+      min-height: 240px;
+      resize: vertical;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .btn {
+      border: none;
+      border-radius: 999px;
+      padding: 14px 28px;
+      font-weight: 700;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+    .btn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+    .hint {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .message {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 14px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+    }
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 28px;
+    }
+    .link-row a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+      <h1>Blog Admin</h1>
+      <p class="lead">Use this page to write and publish new articles on compliance, digital marketing, SEO, and related business topics. Set the backend publish endpoint, complete the form, and submit. The homepage will load published posts from the blog feed endpoint.</p>
+
+      <form id="blog-form">
+        <div class="field">
+          <label for="blog-title">Blog Title</label>
+          <input id="blog-title" name="title" type="text" placeholder="Enter blog headline" required>
+        </div>
+
+        <div class="field">
+          <label for="blog-author">Author</label>
+          <input id="blog-author" name="author" type="text" placeholder="Admin or Author name" required>
+        </div>
+
+        <div class="field">
+          <label for="blog-date">Publish Date</label>
+          <input id="blog-date" name="date" type="date" required>
+        </div>
+
+        <div class="field">
+          <label for="blog-excerpt">Excerpt</label>
+          <textarea id="blog-excerpt" name="excerpt" placeholder="Short summary shown on the homepage" required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="blog-content">Full Blog Content</label>
+          <textarea id="blog-content" name="content" placeholder="Write the full blog content here..." required></textarea>
+        </div>
+
+        <div class="field">
+          <label for="blog-image">Featured Image URL (optional)</label>
+          <input id="blog-image" name="imageUrl" type="url" placeholder="https://example.com/path/to/image.jpg">
+        </div>
+
+        <div class="field">
+          <label for="publish-url">Publish Endpoint</label>
+          <input id="publish-url" name="publishUrl" type="url" placeholder="Enter your Apps Script or API publish URL" required>
+          <p class="hint">Example: https://script.google.com/macros/s/YOUR_DEPLOYED_ID/exec</p>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="publish-btn" type="submit">Publish Blog Post</button>
+          <span id="status-text" class="hint"></span>
+        </div>
+      </form>
+
+      <div class="link-row">
+        <a href="index.html">View homepage blog feed</a>
+        <a href="digital-signature.html">Check service pages</a>
+      </div>
+
+      <div id="response-message" class="message" style="display:none;"></div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('blog-form');
+    const publishBtn = document.getElementById('publish-btn');
+    const statusText = document.getElementById('status-text');
+    const responseMessage = document.getElementById('response-message');
+
+    const today = new Date().toISOString().slice(0, 10);
+    document.getElementById('blog-date').value = today;
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      responseMessage.style.display = 'none';
+      responseMessage.textContent = '';
+
+      const publishUrl = document.getElementById('publish-url').value.trim();
+      if (!publishUrl) {
+        responseMessage.style.display = 'block';
+        responseMessage.textContent = 'Please provide a valid publish endpoint URL.';
+        return;
+      }
+
+      const formData = new FormData(form);
+
+      publishBtn.disabled = true;
+      statusText.textContent = 'Publishing...';
+
+      try {
+        const response = await fetch(publishUrl, {
+          method: 'POST',
+          body: formData
+        });
+
+        const resultText = await response.text();
+        let result;
+        try {
+          result = JSON.parse(resultText);
+        } catch {
+          result = { error: resultText || response.statusText };
+        }
+
+        statusText.textContent = '';
+        responseMessage.style.display = 'block';
+
+        if (!response.ok || result.error) {
+          responseMessage.textContent = 'Publish failed: ' + (result.error || response.statusText);
+          responseMessage.style.backgroundColor = '#fee2e2';
+          responseMessage.style.color = '#991b1b';
+          responseMessage.style.borderColor = '#fca5a5';
+        } else {
+          responseMessage.textContent = 'Published successfully. Refresh the homepage blog section to verify.';
+          responseMessage.style.backgroundColor = '#ecfdf5';
+          responseMessage.style.color = '#14532d';
+          responseMessage.style.borderColor = '#a7f3d0';
+          form.reset();
+          document.getElementById('blog-date').value = today;
+        }
+      } catch (error) {
+        statusText.textContent = '';
+        responseMessage.style.display = 'block';
+        responseMessage.textContent = 'Could not publish the post. Check the endpoint and network connection.';
+        responseMessage.style.backgroundColor = '#fee2e2';
+        responseMessage.style.color = '#991b1b';
+        responseMessage.style.borderColor = '#fca5a5';
+      } finally {
+        publishBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

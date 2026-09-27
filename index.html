@@ -8,6 +8,7 @@
   <title>Tooms Payroll & Staffing Co. | PF, ESI & Compliance Faridabad</title>
   <meta name="description" content="Established in 2024, Tooms Payroll & Staffing Co. offers expert EPF, ESI compliance, payroll processing, PoSH frameworks, and Factory Licensing in Faridabad.">
   <meta name="google-site-verification" content="cPjtACH6nVDPCw9AOQShj85ySy_4OvEFlmBDvRGs6pU" />
+  
   <!-- 2. CORRECT CORNERSTONE CANONICAL URL -->
   <link rel="canonical" href="https://toomspayroll.github.io/">
   
@@ -353,11 +354,16 @@
        4. HERO SECTION (Mesh Background / Gradient Glows)
        ---------------------------------------------------- */
     .hero {
-      position: relative;
-      background-color: var(--color-dark);
       background-image: 
+        url('assets/home_bg.png'),
         radial-gradient(circle at 80% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
         radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.12) 0%, transparent 50%);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      position: relative;
+      background-color: var(--color-dark);
       color: var(--color-white);
       padding-top: 180px;
       padding-bottom: 120px;
@@ -1266,7 +1272,9 @@
         </a>
         
         <ul class="nav-list" id="nav-list">
+          <li><a href="#about" class="nav-link">About Us</a></li>
           <li><a href="#services" class="nav-link">Our Services</a></li>
+          <li><a href="#blog" class="nav-link">Blog</a></li>
           <li><a href="#authority" class="nav-link">B2B Trust</a></li>
           <li><a href="#audit-form" class="nav-link">Compliance Audit</a></li>
           <li><a href="#audit-form" class="nav-cta">Free Audit</a></li>
@@ -1320,80 +1328,64 @@
         </div>
 
         <div class="services-grid">
-          <!-- Card 1: PF -->
-          <a href="pf-compliance.html" class="service-card">
-            <div class="icon-container">
-              <!-- Inline SVG for Document Security -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-            </div>
-            <h3 class="service-title">PF Registration & Monthly Compliance</h3>
-            <p class="service-desc">Complete end-to-end setup, flawless monthly ECR return filing generation, grievance resolution management, and error-free regular updates.</p>
-            <div class="service-card-footer">
-              <span class="service-link">Learn More &rarr;</span>
-              <span class="btn-card-cta">Get Free Audit</span>
-            </div>
-          </a>
-
-          <!-- Card 2: ESI -->
-          <a href="esi-compliance.html" class="service-card">
-            <div class="icon-container">
-              <!-- Inline SVG for Health/Insurance Shield -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M8 11h8"></path><path d="M12 7v8"></path></svg>
-            </div>
-            <h3 class="service-title">ESI Registration & Compliance</h3>
-            <p class="service-desc">Seamless coverage mapping, accurate monthly contribution processing, dynamic employee demographic updating, and total audit readiness.</p>
-            <div class="service-card-footer">
-              <span class="service-link">Learn More &rarr;</span>
-              <span class="btn-card-cta">Get Free Audit</span>
-            </div>
-          </a>
-
-          <!-- Card 3: Factory License -->
-          <a href="factory-license.html" class="service-card">
-            <div class="icon-container">
-              <!-- Inline SVG for Industrial Factory -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="20" width="20" height="2" rx="1"></rect><path d="M5 20V8l7 4V8l7 4v8"></path><polyline points="9 16 9 20"></polyline><polyline points="15 16 15 20"></polyline></svg>
-            </div>
-            <h3 class="service-title">Factory License Consultancy</h3>
-            <p class="service-desc">Flawless handling of new license approvals, architectural plan validation submissions, timely renewals, and rigorous compliance checks under the Factories Act.</p>
-            <div class="service-card-footer">
-              <span class="service-link">Learn More &rarr;</span>
-              <span class="btn-card-cta">Get Free Audit</span>
-            </div>
-          </a>
-
-          <!-- Card 4: PoSH Framework -->
-          <a href="posh-framework.html" class="service-card">
-            <div class="icon-container">
-              <!-- Inline SVG for Balance / Shield / Scale -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
-            <h3 class="service-title">PoSH Compliance Framework</h3>
-            <p class="service-desc">Turnkey establishment of Internal Committees (IC), legally sound policy formulation, standard training structures, and mandatory annual reporting filings.</p>
-            <div class="service-card-footer">
-              <span class="service-link">Learn More &rarr;</span>
-              <span class="btn-card-cta">Get Free Audit</span>
-            </div>
-          </a>
-
-          <!-- Card 5: DSC -->
+          <!-- Card: Digital Signature -->
           <a href="digital-signature.html" class="service-card">
-            <div class="icon-container">
-              <!-- Inline SVG for Certificate Lock / Security Pen -->
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 8v4l3 3"></path></svg>
-            </div>
+            <div class="icon-container"><img src="assets/dsc_service.png" alt="Digital Signature Certificate Service" style="border-radius: var(--radius-sm); width: 100%; height: 100%; object-fit: cover;"></div>
             <h3 class="service-title">Digital Signature Certificates (DSC)</h3>
-            <p class="service-desc">Fast-track provisioning of Class 3 secure digital signatures for safe corporate electronic filings and statutory compliance validations.</p>
+            <p class="service-desc">Fast-track provisioning of Class 3 secure digital signatures for safe corporate filings, GST e-verification, and tendering.</p>
             <div class="service-card-footer">
               <span class="service-link">Learn More &rarr;</span>
               <span class="btn-card-cta">Get Free Audit</span>
             </div>
           </a>
 
-          <!-- Card 6: Pollution NOC -->
+          <!-- Card: PF Registration -->
+          <a href="pf-compliance.html" class="service-card">
+            <div class="icon-container"><img src="assets/pf_service.png" alt="PF Registration and Compliance" style="border-radius: var(--radius-sm); width: 100%; height: 100%; object-fit: cover;"></div>
+            <h3 class="service-title">PF Registration & Monthly Compliance</h3>
+            <p class="service-desc">End-to-end EPF registration, monthly ECR filing, employer/employee contributions, and audit-ready statutory compliance.</p>
+            <div class="service-card-footer">
+              <span class="service-link">Learn More &rarr;</span>
+              <span class="btn-card-cta">Get Free Audit</span>
+            </div>
+          </a>
+
+          <!-- Card: ESI Registration -->
+          <a href="esi-compliance.html" class="service-card">
+            <div class="icon-container"><img src="assets/esi_service.png" alt="ESI Registration and Compliance" style="border-radius: var(--radius-sm); width: 100%; height: 100%; object-fit: cover;"></div>
+            <h3 class="service-title">ESI Registration & Compliance</h3>
+            <p class="service-desc">Complete ESI onboarding, monthly contribution reports, return filing guidance, and employee welfare compliance support.</p>
+            <div class="service-card-footer">
+              <span class="service-link">Learn More &rarr;</span>
+              <span class="btn-card-cta">Get Free Audit</span>
+            </div>
+          </a>
+
+          <!-- Card: Factory License -->
+          <a href="factory-license.html" class="service-card">
+            <div class="icon-container"><img src="assets/factory_service.png" alt="Factory License Consultancy" style="border-radius: var(--radius-sm); width: 100%; height: 100%; object-fit: cover;"></div>
+            <h3 class="service-title">Factory License Consultancy</h3>
+            <p class="service-desc">Guidance and application support for Factory Act registration, safety inspections, and licensing compliance.</p>
+            <div class="service-card-footer">
+              <span class="service-link">Learn More &rarr;</span>
+              <span class="btn-card-cta">Get Free Audit</span>
+            </div>
+          </a>
+
+          <!-- Card: PoSH Compliance -->
+          <a href="posh-framework.html" class="service-card">
+            <div class="icon-container"><img src="assets/posh_service.png" alt="PoSH Compliance Framework" style="border-radius: var(--radius-sm); width: 100%; height: 100%; object-fit: cover;"></div>
+            <h3 class="service-title">PoSH Compliance Framework</h3>
+            <p class="service-desc">Built-in workplace sexual harassment prevention policy, internal committee support, and mandatory employee training compliance.</p>
+            <div class="service-card-footer">
+              <span class="service-link">Learn More &rarr;</span>
+              <span class="btn-card-cta">Get Free Audit</span>
+            </div>
+          </a>
+
+          <!-- Card: Pollution NOC -->
           <a href="pollution-noc.html" class="service-card">
             <div class="icon-container">
-              <!-- Inline SVG for Eco-Shield / Leaf -->
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 2 2 4a7 7 0 0 1-10 14z"></path><path d="M19 10a5 5 0 0 1-5 5"></path></svg>
             </div>
             <h3 class="service-title">Pollution NOC (CTE & CTO)</h3>
@@ -1404,10 +1396,9 @@
             </div>
           </a>
 
-          <!-- Card 7: BoCW Registration -->
+          <!-- Card: BoCW Registration -->
           <a href="bocw-registration.html" class="service-card">
             <div class="icon-container">
-              <!-- Inline SVG for Construction/Helmet/Building -->
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10"></path><path d="M2 10L12 2l10 8z"></path><path d="M12 22V12"></path></svg>
             </div>
             <h3 class="service-title">BoCW Registration & Cess Compliance</h3>
@@ -1418,10 +1409,9 @@
             </div>
           </a>
 
-          <!-- Card 8: Payroll Processing -->
+          <!-- Card: Payroll Processing -->
           <a href="payroll-services.html" class="service-card">
             <div class="icon-container">
-              <!-- Inline SVG for Calculator/Report/Chart -->
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line></svg>
             </div>
             <h3 class="service-title">Payroll Processing & HR Compliance</h3>
@@ -1430,6 +1420,30 @@
               <span class="service-link">Learn More &rarr;</span>
               <span class="btn-card-cta">Get Free Audit</span>
             </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- ----------------------------------------------------
+         ABOUT SECTION
+         ---------------------------------------------------- -->
+    <section id="about" class="authority section-padding" style="background-color: var(--color-white); color: var(--color-dark);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">About Us</span>
+          <h2 class="section-title">Your Trusted Compliance Partner</h2>
+          <p class="section-desc">We are registered professionals providing zero-error corporate compliance and industrial licensing services. Download our legal registrations below.</p>
+        </div>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+          <a href="Udyam Registration Certificate.pdf" target="_blank" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download Udyam Registration
+          </a>
+          <a href="GST Registration Certificate.pdf" target="_blank" class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, var(--color-success) 0%, #059669 100%);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Download GST Registration
           </a>
         </div>
       </div>
@@ -1466,6 +1480,58 @@
         </div>
       </div>
     </section>
+
+    
+    <!-- ----------------------------------------------------
+         BLOG SECTION
+         ---------------------------------------------------- -->
+    <section id="blog" class="services section-padding" style="background-color: var(--color-bg-light);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Insights & Updates</span>
+          <h2 class="section-title">Latest Compliance Blogs</h2>
+          <p class="section-desc">Stay informed with our latest articles on corporate compliance, payroll updates, and industrial licensing.</p>
+        </div>
+        <div id="blog-container" class="services-grid">
+           <!-- Blogs will be loaded here via Google Apps Script -->
+           <p style="text-align: center; width: 100%; color: var(--color-dark-tint);">Loading latest insights...</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Replace with your actual deployed GET URL for blogs
+        const blogsUrl = 'https://script.google.com/macros/s/AKfycbz02uN8Twgf6Uw4Zc-cl_-fSPJvllCV00zbWGQthY8ikwggvOnoVBVWZRcYOjgDf4bp7A/exec'; 
+        
+        fetch(blogsUrl)
+          .then(res => res.json())
+          .then(data => {
+            const container = document.getElementById('blog-container');
+            if(data.length === 0 || data.error) {
+               container.innerHTML = '<p style="text-align: center; width: 100%;">No blogs published yet.</p>';
+               return;
+            }
+            container.innerHTML = '';
+            data.forEach(blog => {
+              const card = document.createElement('div');
+              card.className = 'service-card';
+              card.innerHTML = `
+                <h3 class="service-title">${blog.title || 'Untitled'}</h3>
+                <p style="font-size: 0.85rem; color: var(--color-primary); margin-bottom: 10px;">${new Date(blog.date).toLocaleDateString()} | ${blog.author || 'Admin'}</p>
+                <p class="service-desc">${(blog.content || '').substring(0, 150)}...</p>
+                <div class="service-card-footer">
+                  <span class="service-link" style="cursor:pointer;" onclick="alert('Full blog view coming soon!')">Read More &rarr;</span>
+                </div>
+              `;
+              container.appendChild(card);
+            });
+          })
+          .catch(err => {
+             document.getElementById('blog-container').innerHTML = '<p style="text-align: center; width: 100%;">Could not load blogs at this time.</p>';
+          });
+      });
+    </script>
 
     <!-- ----------------------------------------------------
          5. CONVERSION FORM SECTION
@@ -1541,9 +1607,19 @@
               <div class="form-group">
                 <label for="whatsapp-number" class="form-label">Contact Number (WhatsApp)</label>
                 <div class="form-input-wrapper">
-                  <input type="tel" id="whatsapp-number" name="whatsappNumber" class="form-input" placeholder="+1 (555) 000-0000" required>
+                  <input type="tel" id="whatsapp-number" name="whatsappNumber" class="form-input" placeholder="Enter 10 digit mobile number" pattern="[0-9]{10}" title="Please enter exactly 10 digits" required>
                   <!-- Phone Icon -->
                   <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                </div>
+              </div>
+
+              
+              <!-- Email ID Field -->
+              <div class="form-group">
+                <label for="email-id" class="form-label">Email ID</label>
+                <div class="form-input-wrapper">
+                  <input type="email" id="email-id" name="emailId" class="form-input" placeholder="john@example.com" required>
+                  <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </div>
               </div>
 
@@ -1551,7 +1627,7 @@
               <div class="form-group">
                 <label for="compliance-service" class="form-label">Required Compliance Service</label>
                 <div class="form-input-wrapper">
-                  <select id="compliance-service" name="complianceService" class="form-input form-select" required>
+                  <select id="compliance-service" name="complianceService" class="form-input form-select" required onchange="toggleOtherService()">
                     <option value="" disabled selected>Select Primary Service Needed</option>
                     <option value="PF Registration & Monthly Compliance">PF Registration & Monthly Compliance</option>
                     <option value="ESI Registration & Compliance">ESI Registration & Compliance</option>
@@ -1561,6 +1637,7 @@
                     <option value="Pollution NOC (CTE & CTO)">Pollution NOC (CTE & CTO)</option>
                     <option value="BoCW Registration & Cess Compliance">BoCW Registration & Cess Compliance</option>
                     <option value="Payroll Processing & HR Compliance">Payroll Processing & HR Compliance</option>
+                    <option value="Other service">Other service</option>
                   </select>
                   <!-- Briefcase Icon -->
                   <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
@@ -1569,11 +1646,34 @@
                 </div>
               </div>
 
+              <!-- Other Service Field -->
+              <div class="form-group" id="other-service-group" style="display: none;">
+                <label for="other-service" class="form-label">Specify Other Service</label>
+                <div class="form-input-wrapper">
+                  <input type="text" id="other-service" name="otherService" class="form-input" placeholder="Please specify">
+                </div>
+              </div>
+
+
               <button type="submit" class="btn-submit" id="submit-btn">
                 <span id="submit-text">Secure My Free Consultation</span>
                 <span class="spinner" id="submit-spinner"></span>
               </button>
             </form>
+              <script>
+                function toggleOtherService() {
+                  const select = document.getElementById('compliance-service');
+                  const otherGroup = document.getElementById('other-service-group');
+                  const otherInput = document.getElementById('other-service');
+                  if (select && select.value === 'Other service') {
+                    otherGroup.style.display = 'block';
+                    otherInput.required = true;
+                  } else {
+                    if (otherGroup) otherGroup.style.display = 'none';
+                    if (otherInput) otherInput.required = false;
+                  }
+                }
+              </script>
           </div>
         </div>
       </div>
@@ -1714,12 +1814,15 @@
           fullName: formData.get('fullName'),
           companyName: formData.get('companyName'),
           whatsappNumber: formData.get('whatsappNumber'),
+          emailId: formData.get('emailId'),
+          otherService: formData.get('otherService'),
           complianceService: formData.get('complianceService'),
           submittedAt: new Date().toISOString()
         };
 
         // Configuration targeting Apps Script
         const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbz02uN8Twgf6Uw4Zc-cl_-fSPJvllCV00zbWGQthY8ikwggvOnoVBVWZRcYOjgDf4bp7A/exec';
+	
 
         try {
           // Send request with no-cors mode, matching post guidelines

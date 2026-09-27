@@ -839,8 +839,17 @@
             <div class="form-group">
               <label for="whatsapp-number" class="form-label">Contact Number (WhatsApp)</label>
               <div class="form-input-wrapper">
-                <input type="tel" id="whatsapp-number" name="whatsappNumber" class="form-input" placeholder="+1 (555) 000-0000" required>
+                <input type="tel" id="whatsapp-number" name="whatsappNumber" class="form-input" placeholder="Enter 10 digit mobile number" pattern="[0-9]{10}" title="Please enter exactly 10 digits" required>
                 <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+            </div>
+
+            <!-- Email ID -->
+            <div class="form-group">
+              <label for="email-id" class="form-label">Email ID</label>
+              <div class="form-input-wrapper">
+                <input type="email" id="email-id" name="emailId" class="form-input" placeholder="john@example.com" required>
+                <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
             </div>
 
@@ -848,7 +857,7 @@
             <div class="form-group">
               <label for="compliance-service" class="form-label">Required Compliance Service</label>
               <div class="form-input-wrapper">
-                <select id="compliance-service" name="complianceService" class="form-input form-select" required>
+                <select id="compliance-service" name="complianceService" class="form-input form-select" required onchange="toggleOtherService()">
                   <option value="PF Registration & Monthly Compliance">PF Registration & Monthly Compliance</option>
                   <option value="ESI Registration & Compliance">ESI Registration & Compliance</option>
                   <option value="Factory License Consultancy">Factory License Consultancy</option>
@@ -857,9 +866,17 @@
                   <option value="Pollution NOC (CTE & CTO)">Pollution NOC (CTE & CTO)</option>
                   <option value="BoCW Registration & Cess Compliance" selected>BoCW Registration & Cess Compliance</option>
                   <option value="Payroll Processing & HR Compliance">Payroll Processing & HR Compliance</option>
-                </select>
+                  <option value="Other service">Other service</option>
+                  </select>
                 <svg class="form-input-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
                 <svg class="form-select-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </div>
+            </div>
+
+            <div class="form-group" id="other-service-group" style="display: none;">
+              <label for="other-service" class="form-label">Specify Other Service</label>
+              <div class="form-input-wrapper">
+                <input type="text" id="other-service" name="otherService" class="form-input" placeholder="Please specify">
               </div>
             </div>
 
@@ -868,6 +885,20 @@
               <span class="spinner" id="submit-spinner"></span>
             </button>
           </form>
+              <script>
+                function toggleOtherService() {
+                  const select = document.getElementById('compliance-service');
+                  const otherGroup = document.getElementById('other-service-group');
+                  const otherInput = document.getElementById('other-service');
+                  if (select && select.value === 'Other service') {
+                    otherGroup.style.display = 'block';
+                    otherInput.required = true;
+                  } else {
+                    if (otherGroup) otherGroup.style.display = 'none';
+                    if (otherInput) otherInput.required = false;
+                  }
+                }
+              </script>
         </div>
       </aside>
 
@@ -933,6 +964,8 @@
           fullName: formData.get('fullName'),
           companyName: formData.get('companyName'),
           whatsappNumber: formData.get('whatsappNumber'),
+          emailId: formData.get('emailId'),
+          otherService: formData.get('otherService'),
           complianceService: formData.get('complianceService'),
           submittedAt: new Date().toISOString()
         };
