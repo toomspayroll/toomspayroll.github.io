@@ -91,16 +91,40 @@ function doGet(e) {
 }
 
 function parsePostData(e) {
-  if (e.postData && e.postData.type && e.postData.type.indexOf('application/json') === 0) {
+  if (!e) return {};
+
+  // 1. Try parsing JSON from postData.contents regardless of Content-Type header
+  if (e.postData && e.postData.contents) {
     try {
-      return JSON.parse(e.postData.contents || '{}');
-    } catch (error) {
-      return {};
+      const parsed = JSON.parse(e.postData.contents);
+      if (parsed && typeof parsed === 'object') {
+        return parsed;
+      }
+    } catch (err) {
+      // Content is not JSON, continue to other parsers
     }
   }
 
-  if (e.parameter && Object.keys(e.parameter).length) {
+  // 2. Check e.parameter (standard form submit or url-encoded data)
+  if (e.parameter && Object.keys(e.parameter).length > 0) {
     return e.parameter;
+  }
+
+  // 3. Fallback: try parsing postData.contents as URL-encoded string
+  if (e.postData && e.postData.contents && typeof e.postData.contents === 'string') {
+    try {
+      const params = {};
+      const parts = e.postData.contents.split('&');
+      for (let i = 0; i < parts.length; i++) {
+        const pair = parts[i].split('=');
+        if (pair[0]) {
+          params[decodeURIComponent(pair[0].replace(/\+/g, ' '))] = decodeURIComponent((pair[1] || '').replace(/\+/g, ' '));
+        }
+      }
+      if (Object.keys(params).length > 0) {
+        return params;
+      }
+    } catch (err) {}
   }
 
   return {};

@@ -1808,31 +1808,26 @@
         submitText.style.display = 'none';
         spinner.style.display = 'block';
 
-        // Extract form data into a structured JSON configuration object
+        // Extract form data into URLSearchParams for reliable Apps Script submission
         const formData = new FormData(form);
-        const dataPayload = {
-          fullName: formData.get('fullName'),
-          companyName: formData.get('companyName'),
-          whatsappNumber: formData.get('whatsappNumber'),
-          emailId: formData.get('emailId'),
-          otherService: formData.get('otherService'),
-          complianceService: formData.get('complianceService'),
-          submittedAt: new Date().toISOString()
-        };
+        const params = new URLSearchParams();
+        params.append('fullName', formData.get('fullName') || '');
+        params.append('companyName', formData.get('companyName') || '');
+        params.append('whatsappNumber', formData.get('whatsappNumber') || '');
+        params.append('emailId', formData.get('emailId') || '');
+        params.append('complianceService', formData.get('complianceService') || '');
+        params.append('otherService', formData.get('otherService') || '');
+        params.append('submittedAt', new Date().toISOString());
 
         // Configuration targeting Apps Script
         const appsScriptUrl = 'https://script.google.com/macros/s/AKfycbz02uN8Twgf6Uw4Zc-cl_-fSPJvllCV00zbWGQthY8ikwggvOnoVBVWZRcYOjgDf4bp7A/exec';
-	
 
         try {
-          // Send request with no-cors mode, matching post guidelines
+          // Send request with no-cors mode using URLSearchParams
           await fetch(appsScriptUrl, {
             method: 'POST',
             mode: 'no-cors',
-            headers: {
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dataPayload)
+            body: params
           });
         } catch (error) {
           console.warn('Network transmission skipped or redirected:', error);
